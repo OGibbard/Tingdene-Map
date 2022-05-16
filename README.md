@@ -1,2 +1,0 @@
-# Hotstuff
-Coursework
