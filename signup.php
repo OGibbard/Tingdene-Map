@@ -17,9 +17,8 @@
             <input type="radio" name="role" value="Customer">Customer<br>
             <input type="radio" name="role" value="Admin">Admin<br>
             <input type="submit" value="Sign up">
-            <br>
-            <br>
-            <a href="login.php">Click here to login.</a>
         </form>
+        <br>
+        <a href="login.php">Click here to login.</a>
     </body>
 </html>

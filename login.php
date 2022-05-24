@@ -16,7 +16,6 @@
             <input type="submit" value="Login"> 
         </form>
         <br>
-        <br>
         <a href="signup.php">Click here to sign up.</a>
     </body>
 </html>
