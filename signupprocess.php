@@ -1,9 +1,8 @@
 <?php
-header('Location: login.php');
+#header('Location: login.php');
 try{
     include_once("connectAccounts.php");
     array_map("htmlspecialchars", $_POST);
-    }
 
     $stmt = $conn->prepare("INSERT INTO Accounts (Username,Password,AccountType)VALUES (:username,:password,:accounttype)");
 
