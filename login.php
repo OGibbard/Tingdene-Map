@@ -11,8 +11,8 @@
             Please login.
         </h1>
         <form action='loginprocess.php' method='POST'>
-            User name:<input type='text' name='Username'><br>
-            Password:<input type='password' name='Pword'><br>
+            User name:<input type='text' name='username'><br>
+            Password:<input type='password' name='passwd'><br>
             <input type="submit" value="Login"> 
         </form>
         <br>
