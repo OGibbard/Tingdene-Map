@@ -1,14 +1,15 @@
 <?php
-#header('Location: login.php');
+header('Location: login.php');
 try{
     include_once("connectAccounts.php");
     array_map("htmlspecialchars", $_POST);
+    print_r($_POST);
 
     $stmt = $conn->prepare("INSERT INTO Accounts (Username,Password,AccountType)VALUES (:username,:password,:accounttype)");
 
     $stmt->bindParam(':username', $_POST["username"]);
     $stmt->bindParam(':password', $_POST['passwd']); 
-    $stmt->bindParam(':accounttype', $accounttype); 
+    $stmt->bindParam(':accounttype', $_POST['accounttype']); 
     $stmt->execute();
     }
 catch(PDOException $e)
