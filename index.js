@@ -8,15 +8,15 @@ function initMap() {
       zoom: 15,
       center: thamesandkennet,
     });
-    
-    const parkicon = "TingdenePark.png";
-    const marinaicon = "TingdeneMarina.png";
 
+    const marinapin = 'TingdeneMarina.png';
+    const parkpin = 'TingdenePark.png';
+    
     // The marker, positioned at Thames and Kennet
-    var marker = new google.maps.Marker({
+    const marker = new google.maps.Marker({
       position: thamesandkennet,
       map: map,
-      icon: marinaicon,
+      icon: marinapin,
     });
 }
 
