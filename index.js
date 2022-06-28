@@ -11,13 +11,17 @@ function initMap() {
 
     const marinapin = 'TingdeneMarina.png';
     const parkpin = 'TingdenePark.png';
-    
-    // The marker, positioned at Thames and Kennet
-    const marker = new google.maps.Marker({
-      position: thamesandkennet,
+
+    const thamesandkennetmarker = new google.maps.Marker({
+      position: {lat: 51.4623018, lng: -0.9519213},
       map: map,
       icon: marinapin,
     });
+    const osbornemarker = new google.maps.Marker({
+      position: {lat: 52.679472, lng: 0.157083},
+      map: map,
+      icon: parkpin,
+    })
 }
 
 window.initMap = initMap;
