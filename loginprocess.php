@@ -11,7 +11,6 @@ $stmt->bindParam(':username', $_POST['username']);
 $stmt->execute();
 
 while ($row= $stmt->fetch(PDO::FETCH_ASSOC))
-
 {
 
     if($row['Password']== $_POST['passwd']){
@@ -29,8 +28,15 @@ while ($row= $stmt->fetch(PDO::FETCH_ASSOC))
             $_SESSION['accounttype']='admin';
             header('Location: homepage.php');
         }
+        
+    else{
+        header('Location: login.php');
+        }
     }
 }
+
+echo $stmt->fetch(PDO::FETCH_ASSOC);
+
 if($_POST['passwd']=='')
 {
     header('Location: login.php');
