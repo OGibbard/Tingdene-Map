@@ -18,7 +18,7 @@ catch(PDOException $e)
         echo "error".$e->getMessage();
     }
 $conn=null;
-//header('Location: login.php');
+header('Location: homepage.php');
 
 echo $_POST["sitename"]."<br>";
 echo $_POST["sitetype"]."<br>";
