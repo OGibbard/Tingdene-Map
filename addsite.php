@@ -3,12 +3,12 @@
 <html>
     <head>
         <Title>
-            Sign up
+            Add site
         </Title>    
     </head>
     <body>
         <h1>
-            Please Sign Up.
+            Fill this in to add a site.
         </h1>
         <form action='addsiteprocess.php' method='POST'>
             Site name:<input type='text' name='sitename'><br>
