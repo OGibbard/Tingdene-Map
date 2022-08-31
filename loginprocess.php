@@ -28,16 +28,16 @@ while ($row= $stmt->fetch(PDO::FETCH_ASSOC))
             $_SESSION['accounttype']='admin';
             header('Location: homepage.php');
         }
-        
-    else{
-        header('Location: login.php');
-        }
     }
 }
 
 echo $stmt->fetch(PDO::FETCH_ASSOC);
 
 if($_POST['passwd']=='')
+{
+    header('Location: login.php');
+}
+if($_POST['passwd']!=$row['Password'])
 {
     header('Location: login.php');
 }
