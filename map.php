@@ -3,7 +3,7 @@
   <head>
     <title>Add Map</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-
+    <script src="./node.js"></script>
     <link rel="stylesheet" type="text/css" href="./gmaps.css" />
     <script type="module" src="./index.js"></script>
   </head>
