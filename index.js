@@ -1,5 +1,4 @@
 let map;
-
 function initMap() {
     // The map, centered at Thames and Kennet
     const map = new google.maps.Map(document.getElementById("map"), {
@@ -8,7 +7,7 @@ function initMap() {
     });
     const marina = 'TingdeneMarina.png';
     const park = 'TingdenePark.png';
-
+    console.log(hello)
     const sites = [
       // thamesandkennet
       {
@@ -21,7 +20,8 @@ function initMap() {
       // osborne
       {
         name: 'Osborne',
-        position: {lat: 52.679472, lng: 0.157083},
+        position: {lat: hello, lng: 0.157083},
+        //position: {lat: 52.679472, lng: 0.157083},
         map: map,
         type: park,
         websitelink: '/sites/osborne/',
