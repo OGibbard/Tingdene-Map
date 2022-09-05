@@ -7,8 +7,8 @@ function initMap() {
     });
     const marina = 'TingdeneMarina.png';
     const park = 'TingdenePark.png';
-    console.log(hello)
-    const sites = [
+    //console.log(properties)
+    var sites = [
       // thamesandkennet
       {
         name: 'Thames and Kennet',
@@ -27,6 +27,8 @@ function initMap() {
         websitelink: '/sites/osborne/',
       },
     ];
+    console.log(sites[0])
+    console.log(sites)
     
     for (let i = 0; i < sites.length; i++) {
       const marker = new google.maps.Marker({

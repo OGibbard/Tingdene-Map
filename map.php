@@ -10,12 +10,34 @@
     array_map("htmlspecialchars", $_POST);
     $stmt = $conn->prepare("SELECT * FROM properties");
     $stmt->execute();
-    print_r(count($stmt->fetch(PDO::FETCH_ASSOC)));
+    $k=0;
+    $properties = array();
+    while(True){
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    print_r($result);
+    if ($result ==('')){
+      echo ("ABCDEF <br>");
+      print_r($result);
+      var_dump($result['SiteName']);
+      break;
+    }
+    else{
+      print_r($result['SiteName']);
+      print_r($result);
+      print_r($k);
+      print_r("<br>");
+    }
+    $k=$k+1;
+    }
     ?>
 
     <script>var hello = <?php echo (52.679472); ?>;</script>
+
+    <script>
+    while (True) {
+        
+    }
+    </script>
+
     <script type="module" src="./index.js"></script>
 
   </head>
