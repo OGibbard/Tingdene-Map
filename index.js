@@ -5,26 +5,9 @@ function initMap() {
       zoom: 6,
       center: {lat: 54.3760767, lng: -2.5588948},
     });
-    console.log(properties)
-    var sites = [
-      // osborne
-      {
-        name: 'Osborne',
-        position: {lat: 52.679472, lng: 0.157083},
-        map: map,
-        type: 'park',
-        websitelink: '/sites/osborne/',
-      },
-    ];
+    
+    console.log(properties);
 
-    for (let i = 0; i < sites.length; i++) {
-      var temptype = sites[i].type
-      const marker = new google.maps.Marker({
-        position: sites[i].position,
-        icon: 'Tingdene'+sites[i].type+'.png',
-        map: map,
-      })
-    }
     for (let j=0; j < properties.length; j++) {
       var temptype = properties[j].SiteType
       const marker = new google.maps.Marker({

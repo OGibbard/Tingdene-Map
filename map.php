@@ -10,20 +10,12 @@
     array_map("htmlspecialchars", $_POST);
     $stmt = $conn->prepare("SELECT * FROM properties");
     $stmt->execute();
-    //$result = $stmt->fetch(PDO::FETCH_ASSOC);
     $test = $stmt->fetchAll();
-    print_r($test);
-    //$properties = json_encode($result);
     $properties = json_encode($test);
     ?>
 
-    <script>var hello = <?php echo (52.679472); ?>;</script>
-
     <script>
-    //var properties = [];
-    for (let i = 0; i < 4; i++) {
     var properties = (<?php echo $properties;?>);
-    }
     </script>
 
     <script type="module" src="./index.js"></script>
