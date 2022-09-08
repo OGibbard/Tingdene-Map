@@ -4,38 +4,22 @@
     <title>Add Map</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <link rel="stylesheet" type="text/css" href="./gmaps.css" />
-
+    
     <?php
     include_once("connection.php");
     array_map("htmlspecialchars", $_POST);
     $stmt = $conn->prepare("SELECT * FROM properties");
     $stmt->execute();
-    $k=0;
-    $properties = array();
-    while(True){
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    if ($result ==('')){
-      echo ("ABCDEF <br>");
-      print_r($result);
-      var_dump($result['SiteName']);
-      break;
-    }
-    else{
-      print_r($result['SiteName']);
-      print_r($result);
-      print_r($k);
-      print_r("<br>");
-    }
-    $k=$k+1;
-    }
+    $properties = json_encode($result);
     ?>
 
     <script>var hello = <?php echo (52.679472); ?>;</script>
 
     <script>
-    while (True) {
-        
-    }
+    <?php
+    echo "var properties = [". $properties . "];\n"; 
+    ?>
     </script>
 
     <script type="module" src="./index.js"></script>
