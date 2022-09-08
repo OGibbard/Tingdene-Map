@@ -7,14 +7,6 @@ function initMap() {
     });
     console.log(properties)
     var sites = [
-      // thamesandkennet
-      {
-        name: 'Thames and Kennet',
-        position: {lat: 51.4623018, lng: -0.9519213},
-        map: map,
-        type: 'marina',
-        websitelink: '/sites/thames-and-kennet/',
-      },
       // osborne
       {
         name: 'Osborne',
