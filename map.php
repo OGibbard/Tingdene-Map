@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (isset($_SESSION['name'])){
+  header('Location: login.php')
+}
+if ($_SESSION['accounttype']=='customer'){
+  header('Location: homepage.php')
+}
+
 <!DOCTYPE html>
 <html>
   <head>
