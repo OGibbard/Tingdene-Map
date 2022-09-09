@@ -1,11 +1,13 @@
 <?php
 session_start();
-if (isset($_SESSION['name'])){
-  header('Location: login.php')
-}
+if (isset($_SESSION['name'])==false){
+  header('Location: login.php');
+};
+print_r($_SESSION);
 if ($_SESSION['accounttype']=='customer'){
-  header('Location: homepage.php')
-}
+  header('Location: homepage.php');
+};
+?>
 
 <!DOCTYPE html>
 <html>
