@@ -3,7 +3,6 @@ session_start();
 if (isset($_SESSION['name'])==false){
   header('Location: login.php');
 };
-print_r($_SESSION);
 if ($_SESSION['accounttype']=='customer'){
   header('Location: homepage.php');
 };

@@ -14,5 +14,7 @@
         <a href="login.php">Click here to login.</a>
         <br>
         <a href="signup.php">Click here to sign up.</a>
+        <br>
+        <a href="admin.php">Click here for the admin page.</a>
     </body>
 </html>

@@ -13,6 +13,7 @@
         <form action='signupprocess.php' method='POST'>
             User name:<input type='text' name='username'><br>
             Password:<input type='password' name='passwd'><br>
+            Company:<input type='text' name='company'><br>
             <input type="radio" name="accounttype" value="user" checked>User<br>
             <input type="radio" name="accounttype" value="customer">Customer<br>
             <input type="radio" name="accounttype" value="admin">Admin<br>

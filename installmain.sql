@@ -1,14 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 13, 2022 at 11:12 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.3
+-- Generation Time: Sep 13, 2022 at 12:16 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
+set AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -41,11 +41,54 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`Username`, `Password`, `AccountType`) VALUES
-('johnsmith', '%)Ea#rK85V]d_Vm\"', 'user');
+('johnsmith', '%)Ea#rK85V]d_Vm\"', 'user'),
+('ethan', 'zone', 'user'),
+('oliver', 'oliver', 'user');
+
+-- --------------------------------------------------------
+
 --
--- Database: `options`
+-- Table structure for table `properties`
 --
 
+CREATE TABLE `properties` (
+  `SiteID` int(8) NOT NULL,
+  `SiteName` varchar(1000) NOT NULL,
+  `SiteType` varchar(50) NOT NULL,
+  `Latitude` varchar(15) NOT NULL,
+  `Longitude` varchar(15) NOT NULL,
+  `WebsiteLink` varchar(1000) NOT NULL,
+  `Company` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `properties`
+--
+
+INSERT INTO `properties` (`SiteID`, `SiteName`, `SiteType`, `Latitude`, `Longitude`, `WebsiteLink`, `Company`) VALUES
+(2, 'Windsor', 'Marina', '51.4879317', '-0.6381952', 'Windsor', 'Tingdene'),
+(3, 'Thames and Kennet', 'Marina', '51.4623018', '-0.9519213', 'Thames-and-Kennet', 'Tingdene'),
+(4, 'Osborne', 'Park', '52.679472', '0.157083', 'Osborne', 'Tingdene');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `properties`
+--
+ALTER TABLE `properties`
+  ADD PRIMARY KEY (`SiteID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `properties`
+--
+ALTER TABLE `properties`
+  MODIFY `SiteID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

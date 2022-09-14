@@ -28,6 +28,7 @@ while ($row= $stmt->fetch(PDO::FETCH_ASSOC))
             $_SESSION['accounttype']='admin';
             header('Location: homepage.php');
         }
+        $_SESSION['company']=$row['Company'];
 
     }
     else{
