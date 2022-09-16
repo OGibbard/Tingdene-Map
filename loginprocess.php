@@ -9,10 +9,12 @@ $stmt = $conn->prepare("SELECT * FROM accounts WHERE Username =:username ;" );
 $stmt->bindParam(':username', $_POST['username']); 
 
 $stmt->execute();
-
-while ($row= $stmt->fetch(PDO::FETCH_ASSOC))
-{
-
+$row= $stmt->fetch(PDO::FETCH_ASSOC);
+if($_POST['username']==''){
+    header('Location: login.php');
+}elseif($row['Username']!=$_POST['username']){
+    header('Location: login.php');
+}else{
     if($row['Password']== $_POST['passwd']){
         $_SESSION['name']=$row['Username'];
 
@@ -28,6 +30,7 @@ while ($row= $stmt->fetch(PDO::FETCH_ASSOC))
             $_SESSION['accounttype']='admin';
             header('Location: homepage.php');
         }
+
         $_SESSION['company']=$row['Company'];
 
     }
@@ -35,9 +38,6 @@ while ($row= $stmt->fetch(PDO::FETCH_ASSOC))
         header('Location: login.php');
     }
 }
-
-echo $stmt->fetch(PDO::FETCH_ASSOC);
-
 $conn=null;
 
 ?>
