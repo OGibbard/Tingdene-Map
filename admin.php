@@ -14,7 +14,7 @@ if ($_SESSION['accounttype']!='admin'){
 <form action='adminadduser.php' method='POST'>
   User name:<input type='text' name='username'><br>
   Password:<input type='password' name='passwd'><br>
-  <input type="submit" value="Add site">
+  <input type="submit" value="Add user">
 </form>
 <form action='adminaddsite.php' method='POST'>
   Site name:<input type='text' name='sitename'><br>

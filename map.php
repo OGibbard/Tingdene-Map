@@ -18,7 +18,8 @@ if ($_SESSION['accounttype']=='customer'){
     <?php
     include_once("connection.php");
     array_map("htmlspecialchars", $_POST);
-    $stmt = $conn->prepare("SELECT * FROM properties");
+    $stmt = $conn->prepare("SELECT * FROM properties WHERE Company = :company ;");
+    $stmt->bindParam(':company', $_SESSION['company']);
     $stmt->execute();
     $test = $stmt->fetchAll();
     $properties = json_encode($test);

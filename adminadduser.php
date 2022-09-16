@@ -9,29 +9,24 @@ $stmt = $conn->prepare("SELECT * FROM accounts WHERE Username =:username ;" );
 $stmt->bindParam(':username', $_POST['username']); 
 
 $stmt->execute();
-
 while ($row= $stmt->fetch(PDO::FETCH_ASSOC))
 {
 
     if($row['Password']== $_POST['passwd']){
-
-        if($row['AccountType']=='user'){
-            $_SESSION['accounttype']='user';
-            header('Location: homepage.php');
-
-        }elseif($row['AccountType']=='customer'){
-            $_SESSION['accounttype']='customer';
-            header('Location: homepage.php');
-
-        }elseif($row['AccountType']=='admin'){
-            $_SESSION['accounttype']='admin';
-            header('Location: homepage.php');
+        try{
+        $stmt = $conn->prepare("UPDATE accounts SET Company = :company WHERE username = :username ;");
+        $stmt->bindParam(':username', $_POST['username']);
+        $stmt->bindParam(':company', $_SESSION['company']);
+        $stmt->execute();
+        //header('Location: admin.php');
         }
-        $_SESSION['company']=$row['Company'];
-
+        catch(PDOException $e)
+            {
+                echo "error".$e->getMessage();
+            }
     }
     else{
-        header('Location: login.php');
+        //header('Location: admin.php');
     }
 }
 
