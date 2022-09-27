@@ -10,11 +10,21 @@ function initMap() {
 
     for (let j=0; j < properties.length; j++) {
       var temptype = properties[j].SiteType
+      const infowindow = new google.maps.InfoWindow({
+        content: properties[j].SiteName,
+      });
       const marker = new google.maps.Marker({
         position: {lat: parseFloat(properties[j].Latitude), lng: parseFloat(properties[j].Longitude)},
         icon: properties[j].Company + properties[j].SiteType+'.png',
         map: map,
       })
+      marker.addListener("click", () => {
+        infowindow.open({
+          anchor: marker,
+          map,
+          shouldFocus: false,
+        });
+      });
     }
 }
 

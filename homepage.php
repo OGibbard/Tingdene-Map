@@ -5,7 +5,6 @@ if (isset($_SESSION['name'])==false){
 };
 ?>
 <!DOCTYPE html>
-
 <html>
     <head>
         <Title>
@@ -15,10 +14,15 @@ if (isset($_SESSION['name'])==false){
     <body>
         <a href="map.php">Click here to go to the map.</a>
         <br>
-        <a href="login.php">Click here to login.</a>
+        <a href="login.php">Click here to sign out.</a>
         <br>
-        <a href="signup.php">Click here to sign up.</a>
-        <br>
-        <a href="admin.php">Click here for the admin page.</a>
+        <a id="adminshow" href="admin.php">Click here for the admin page.</a>
+        <script type="text/javascript">
+            if("<?php echo $_SESSION['accounttype']; ?>" === 'admin'){
+                document.getElementById("adminshow").style.display = "block";
+            }else{
+                document.getElementById("adminshow").style.display = "none";
+            }
+        </script>
     </body>
 </html>
