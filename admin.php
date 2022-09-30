@@ -16,6 +16,7 @@ if ($_SESSION['accounttype']!='admin'){
   Password:<input type='password' name='passwd'><br>
   <input type="submit" value="Add user">
 </form>
+<a>Add site to map:</a>
 <form action='adminaddsite.php' method='POST'>
   Site name:<input type='text' name='sitename'><br>
   Site type:<input type='text' name='sitetype'><br>
