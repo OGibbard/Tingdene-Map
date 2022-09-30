@@ -17,7 +17,7 @@ function initMap() {
         position: {lat: parseFloat(properties[j].Latitude), lng: parseFloat(properties[j].Longitude)},
         icon: properties[j].Company + properties[j].SiteType+'.png',
         map: map,
-      })
+      });
       marker.addListener("click", () => {
         infowindow.open({
           anchor: marker,
