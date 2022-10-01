@@ -2,13 +2,13 @@
 include_once ('..\connection.php');
 session_start();
 if (isset($_SESSION['name'])==false){
-  header('Location: login.php');
+  header('Location: ../login.php');
 };
 if ($_SESSION['accounttype']=='customer'){
-    header('Location: homepage.php');
+    header('Location: ../homepage.php');
 };
 if ($_SESSION['Company']!='Tingdene'){
-    header('Location: homepage.php')
+    header('Location: ../homepage.php');
 };
 
 $stmt = $conn->prepare("SELECT * FROM properties WHERE WebsiteLink = 'Thames-and-Kennet' ;");
