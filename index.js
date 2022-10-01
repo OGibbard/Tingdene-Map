@@ -11,7 +11,7 @@ function initMap() {
     for (let j=0; j < properties.length; j++) {
       var temptype = properties[j].SiteType
       const infowindow = new google.maps.InfoWindow({
-        content: (properties[j].SiteName + '<a href="tingdene/Thames-and-Kennet.php">Thames and Kennet</a>'),
+        content: (properties[j].SiteName + '<a href="'+properties[j].Company+'/'+properties[j].WebsiteLink+'">'+properties[j].SiteName+'</a>'),
       });
       const marker = new google.maps.Marker({
         position: {lat: parseFloat(properties[j].Latitude), lng: parseFloat(properties[j].Longitude)},
@@ -29,4 +29,3 @@ function initMap() {
 }
 
 window.initMap = initMap;
-  
