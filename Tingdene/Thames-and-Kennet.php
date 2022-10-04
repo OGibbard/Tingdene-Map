@@ -7,7 +7,7 @@ if (isset($_SESSION['name'])==false){
 if ($_SESSION['accounttype']=='customer'){
     header('Location: ../homepage.php');
 };
-if ($_SESSION['Company']!='Tingdene'){
+if ($_SESSION['company']!='Tingdene'){
     header('Location: ../homepage.php');
 };
 

@@ -1,12 +1,12 @@
 <?php
 session_start();
 $_SESSION['company']='Tingdene';
-/* if (isset($_SESSION['name'])==false){
+if (isset($_SESSION['name'])==false){
   header('Location: login.php');
 };
 if ($_SESSION['accounttype']=='customer'){
   header('Location: homepage.php');
-}; */
+};
 ?>
 
 <!DOCTYPE html>
