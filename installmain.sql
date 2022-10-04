@@ -3,12 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 13, 2022 at 12:16 PM
+-- Generation Time: Oct 04, 2022 at 12:18 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-set AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -21,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `main`
 --
-CREATE DATABASE IF NOT EXISTS `main` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `main`;
 
 -- --------------------------------------------------------
 
@@ -33,17 +30,19 @@ USE `main`;
 CREATE TABLE `accounts` (
   `Username` varchar(100) NOT NULL,
   `Password` varchar(100) NOT NULL,
-  `AccountType` varchar(20) NOT NULL
+  `AccountType` varchar(20) NOT NULL,
+  `Company` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `accounts`
 --
 
-INSERT INTO `accounts` (`Username`, `Password`, `AccountType`) VALUES
-('johnsmith', '%)Ea#rK85V]d_Vm\"', 'user'),
-('ethan', 'zone', 'user'),
-('oliver', 'oliver', 'user');
+INSERT INTO `accounts` (`Username`, `Password`, `AccountType`, `Company`) VALUES
+('ethan', 'zone', 'user', 'Tingdene'),
+('gibby', 'admin', 'admin', 'Tingdene'),
+('johnsmith', '%)Ea#rK85V]d_Vm\"', 'user', ''),
+('oliver', 'oliver', 'user', '');
 
 -- --------------------------------------------------------
 
@@ -75,6 +74,12 @@ INSERT INTO `properties` (`SiteID`, `SiteName`, `SiteType`, `Latitude`, `Longitu
 --
 
 --
+-- Indexes for table `accounts`
+--
+ALTER TABLE `accounts`
+  ADD PRIMARY KEY (`Username`);
+
+--
 -- Indexes for table `properties`
 --
 ALTER TABLE `properties`
@@ -88,7 +93,7 @@ ALTER TABLE `properties`
 -- AUTO_INCREMENT for table `properties`
 --
 ALTER TABLE `properties`
-  MODIFY `SiteID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `SiteID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
