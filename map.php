@@ -1,6 +1,5 @@
 <?php
 session_start();
-$_SESSION['company']='Tingdene';
 if (isset($_SESSION['name'])==false){
   header('Location: login.php');
 };

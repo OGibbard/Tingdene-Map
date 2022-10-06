@@ -23,8 +23,8 @@ else {
             $stmt = $conn->prepare("INSERT INTO Accounts (Username,Password,AccountType)VALUES (:username,:password,:accounttype)");
         
             $stmt->bindParam(':username', $_POST["username"]);
-            $stmt->bindParam(':password', $_POST['passwd']); 
-            $stmt->bindParam(':accounttype', $_POST['accounttype']); 
+            $stmt->bindParam(':password', $_POST['passwd']);
+            $stmt->bindParam(':accounttype', $_POST['accounttype']);
             $stmt->execute();
         }
         }
