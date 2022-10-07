@@ -7,6 +7,8 @@ if ($_SESSION['accounttype']!='admin'){
   header('Location: homepage.php');
 };
 ?>
+<!DOCTYPE html>
+<body>
 <br><h3>Admin for:</h3>
 <h1><?php echo ($_SESSION['company']); ?></h1>
 <br>
@@ -16,6 +18,7 @@ if ($_SESSION['accounttype']!='admin'){
   Password:<input type='password' name='passwd'><br>
   <input type="submit" value="Add user">
 </form>
+<br>
 <a>Add site to map:</a>
 <form action='adminaddsite.php' method='POST'>
   Site name:<input type='text' name='sitename'><br>
@@ -24,3 +27,20 @@ if ($_SESSION['accounttype']!='admin'){
   Longitude:<input type='text' name='longitude'><br>
   <input type="submit" value="Add site">
 </form>
+<br>
+<a>Delete Site:</a>
+<form action='admindeletesite.php' method="POST">
+Site:<select name="SiteName"><br>
+<?php
+include_once("connection.php");
+$stmt = $conn->prepare("SELECT * FROM properties WHERE Company=':company'");
+$stmt->bindParam(':company', $_SESSION['company']);
+$stmt->execute();
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+{
+  echo('<option value="'.$row["SiteName"].'">'.$row["SiteName"].'</option>');
+}
+?>
+<input type="submit" value="Delete Site">
+</form>
+</body>
