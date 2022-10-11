@@ -33,7 +33,7 @@ if ($_SESSION['accounttype']!='admin'){
 Site:<select name="SiteName"><br>
 <?php
 include_once("connection.php");
-$stmt = $conn->prepare("SELECT * FROM properties WHERE Company=':company'");
+$stmt = $conn->prepare("SELECT * FROM properties WHERE Company=:company");
 $stmt->bindParam(':company', $_SESSION['company']);
 $stmt->execute();
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC))

@@ -33,5 +33,4 @@ echo $_POST["sitename"]."<br>";
 echo $_POST["sitetype"]."<br>";
 echo $_POST["latitude"]."<br>";
 echo $_POST["longitude"]."<br>";
-print_r($_POST);
 ?>
