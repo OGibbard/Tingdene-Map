@@ -33,6 +33,15 @@ if ($_SESSION['accounttype']=='customer'){
 
   </head>
   <body>
+    <a href='homepage.php'>Click here to return to the homepage.</a>
+    <a id="adminshow" href="admin.php">Click here for the admin page.</a>
+        <script type="text/javascript">
+            if("<?php echo $_SESSION['accounttype']; ?>" === 'admin'){
+                document.getElementById("adminshow").style.display = "block";
+            }else{
+                document.getElementById("adminshow").style.display = "none";
+            }
+        </script>
     <h3>My Google Maps Demo</h3>
     <!--The div element for the map -->
     <div id="map"></div>

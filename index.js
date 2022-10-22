@@ -15,7 +15,7 @@ function initMap() {
       });
       const marker = new google.maps.Marker({
         position: {lat: parseFloat(properties[j].Latitude), lng: parseFloat(properties[j].Longitude)},
-        icon: properties[j].Company + properties[j].SiteType+'.png',
+        icon: properties[j].Company + '/' + properties[j].SiteType+'.png',
         map: map,
       });
       marker.addListener("click", () => {

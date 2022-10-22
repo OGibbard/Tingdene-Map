@@ -13,6 +13,7 @@ while ($row= $stmt->fetch(PDO::FETCH_ASSOC))
 {
 
     if($row['Password']== $_POST['passwd']){
+        if($row['AccountType']=='User'){
         try{
         $stmt = $conn->prepare("UPDATE accounts SET Company = :company WHERE username = :username ;");
         $stmt->bindParam(':username', $_POST['username']);
@@ -26,7 +27,11 @@ while ($row= $stmt->fetch(PDO::FETCH_ASSOC))
             }
     }
     else{
-        //header('Location: admin.php');
+        header('Location: admin.php');
+    }
+    }
+    else{
+        header('Location: admin.php');
     }
 }
 

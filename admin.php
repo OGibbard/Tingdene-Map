@@ -9,6 +9,9 @@ if ($_SESSION['accounttype']!='admin'){
 ?>
 <!DOCTYPE html>
 <body>
+<a href='homepage.php'>Click here to return to the homepage.</a>
+<br>
+<a href='map.php'>Click here to go to the map.</a>
 <br><h3>Admin for:</h3>
 <h1><?php echo ($_SESSION['company']); ?></h1>
 <br>
