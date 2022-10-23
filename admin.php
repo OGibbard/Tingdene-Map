@@ -46,4 +46,13 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 ?>
 <input type="submit" value="Delete Site">
 </form>
+<br>
+<form action="uploadmarker.php" method="post" enctype="multipart/form-data">
+  Upload png for marker:
+  <br>
+  Name: <input type="text" name="markername"><br>
+  File: <input type="file" name="fileToUpload" id="fileToUpload">
+  <br>
+  <input type="submit" value="Upload Image" name="submit">
+</form>
 </body>
