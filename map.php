@@ -33,6 +33,7 @@ if ($_SESSION['accounttype']=='customer'){
 
   </head>
   <body>
+    <a><?php echo $_SESSION['name']?><a><br>
     <a href='homepage.php'>Click here to return to the homepage.</a>
     <a id="adminshow" href="admin.php">Click here for the admin page.</a>
         <script type="text/javascript">
