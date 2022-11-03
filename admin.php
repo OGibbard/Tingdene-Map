@@ -22,6 +22,79 @@ if ($_SESSION['accounttype']!='admin'){
   <input type="submit" value="Add user">
 </form>
 <br>
+<a>Change Tier:</a>
+<form action='adminchangetier.php' method="POST">
+Username:<select name="Username"><br>
+<?php
+include_once("connection.php");
+$stmt = $conn->prepare("SELECT * FROM accounts WHERE Company=:company AND AccountType='user'");
+$stmt->bindParam(':company', $_SESSION['company']);
+$stmt->execute();
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+{
+  echo('<option value="'.$row["Username"].'">'.$row["Username"].'</option>');
+}
+?>
+<input type='radio' name=''
+<input type="submit" value="Change Tier">
+</form>
+<br>
+<a>Remove User:</a>
+<form action='admindeleteuser.php' method="POST">
+Username:<select name="Username"><br>
+<?php
+include_once("connection.php");
+$stmt = $conn->prepare("SELECT * FROM accounts WHERE Company=:company AND AccountType='user'");
+$stmt->bindParam(':company', $_SESSION['company']);
+$stmt->execute();
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+{
+  echo('<option value="'.$row["Username"].'">'.$row["Username"].'</option>');
+}
+?>
+<input type="submit" value="Remove User">
+</form>
+<br>
+<a>Add admin:</a>
+<form action='adminaddadmin.php' method="POST">
+Username:<select name="Username"><br>
+<?php
+include_once("connection.php");
+$stmt = $conn->prepare("SELECT * FROM accounts WHERE Company=:company AND AccountType='user'");
+$stmt->bindParam(':company', $_SESSION['company']);
+$stmt->execute();
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+{
+  echo('<option value="'.$row["Username"].'">'.$row["Username"].'</option>');
+}
+?>
+<input type="submit" value="Add Admin">
+</form>
+<br>
+<a>Remove Admin:</a>
+<form action='admindeleteadmin.php' method="POST">
+Username:<select name="Username"><br>
+<?php
+include_once("connection.php");
+$stmt = $conn->prepare("SELECT * FROM accounts WHERE Company=:company AND AccountType='admin'");
+$stmt->bindParam(':company', $_SESSION['company']);
+$stmt->execute();
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+{
+  echo('<option value="'.$row["Username"].'">'.$row["Username"].'</option>');
+}
+?>
+<br>
+<input type='radio' onclick='showButton()'>
+<input id='adminremovebutton' type="submit" value="Remove Admin">
+<script type="text/javascript">
+document.getElementById("adminremovebutton").style.display = "none";
+function showButton(){
+    document.getElementById("adminremovebutton").style.display = "block";
+}
+</script>
+</form>
+<br>
 <a>Add site to map:</a>
 <form action='adminaddsite.php' method='POST'>
   Site name:<input type='text' name='sitename'><br>
