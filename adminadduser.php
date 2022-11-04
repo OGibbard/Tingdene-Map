@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once ('connection.php');
+print_r($_POST);
 
 array_map('htmlspecialchars', $_POST);
 
@@ -13,13 +14,13 @@ while ($row= $stmt->fetch(PDO::FETCH_ASSOC))
 {
 
     if($row['Password']== $_POST['passwd']){
-        if($row['AccountType']=='User'){
+        if($row['AccountType']=='user'){
         try{
-        $stmt = $conn->prepare("UPDATE accounts SET Company = :company WHERE username = :username ;");
+        $stmt = $conn->prepare("UPDATE accounts SET Company = :company WHERE Username = :username ;");
         $stmt->bindParam(':username', $_POST['username']);
         $stmt->bindParam(':company', $_SESSION['company']);
         $stmt->execute();
-        //header('Location: admin.php');
+        header('Location: admin.php');
         }
         catch(PDOException $e)
             {
