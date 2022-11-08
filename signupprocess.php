@@ -11,7 +11,7 @@ if ($result > 0) {
 else {
     try{
         if ($_POST['accounttype']=='admin'){
-            $stmt = $conn->prepare("INSERT INTO Accounts (Username,Password,AccountType,Company)VALUES (:username,:password,:accounttype,:company)");
+            $stmt = $conn->prepare("INSERT INTO Accounts (Username,Password,AccountType,Company,Tier)VALUES (:username,:password,:accounttype,:company,1)");
         
             $stmt->bindParam(':username', $_POST["username"]);
             $stmt->bindParam(':password', $_POST['passwd']); 

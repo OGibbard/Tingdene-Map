@@ -24,10 +24,22 @@ $row= $stmt->fetch(PDO::FETCH_ASSOC);
         </Title>    
     </head>
     <body>
-        <a>Latitude: <?php echo $row['Latitude'];?></a>
-        <br>
-        <a>Longitude: <?php echo $row['Longitude'];?></a>
-        <br>
-        <a href='../map.php'>Click here to return to the map.</a>
-    </body>
+<h2><?php echo $row['Company'];?></h2>
+<br>
+<a>Name: <?php echo $row['SiteName'];?></a>
+<br>
+<a>Site type: <?php echo $row['SiteType'];?></a>
+<br>
+<a>Latitude: <?php echo $row['Latitude'];?></a>
+<br>
+<a>Longitude: <?php echo $row['Longitude'];?></a>
+<br>
+<a>Area: <?php echo $row['Area'];?></a>
+<br>
+<a>Valuation: <?php echo $row['Valuation'];?></a>
+<br>
+<a>Capacity: <?php echo $row['Capacity'];?></a>
+<br>
+<a href='../map.php'>Click here to return to the map.</a>
+</body>
 </html>

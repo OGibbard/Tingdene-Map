@@ -134,6 +134,9 @@ function showButton(){
   Site type:<input type='text' name='sitetype'><br>
   Latitude:<input type='text' name='latitude'><br>
   Longitude:<input type='text' name='longitude'><br>
+  Area:<input type='text' name='area'><br>
+  Valuation:<input type='text' name='valuation'><br>
+  Capacity:<input type='text' name='capacity'><br>
   <input type="submit" value="Add site">
 </form>
 
