@@ -34,9 +34,9 @@ $row= $stmt->fetch(PDO::FETCH_ASSOC);
         <br>
         <a>Longitude: <?php echo $row['Longitude'];?></a>
         <br>
-        <a>Area: <?php echo $row['Area'];?></a>
+        <a>Area: <?php echo $row['Area'];?> acres</a>
         <br>
-        <a>Valuation: <?php echo $row['Valuation'];?></a>
+        <a>Valuation: £<?php echo $row['Valuation'];?></a>
         <br>
         <a>Capacity: <?php echo $row['Capacity'];?></a>
         <br>

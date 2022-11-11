@@ -32,6 +32,7 @@ if($_POST['username']==''){
         }
 
         $_SESSION['company']=$row['Company'];
+        $_SESSION['Tier']=$row['Tier'];
 
     }
     else{
