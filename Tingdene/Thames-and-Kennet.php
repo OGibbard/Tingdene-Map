@@ -35,16 +35,19 @@ $row= $stmt->fetch(PDO::FETCH_ASSOC);
 <a>Longitude: <?php echo $row['Longitude'];?></a>
 <br>
 <a id='area'>Area: <?php echo $row['Area'];?> acres</a>
-<br>
 <a id='valuation'>Valuation: £<?php echo $row['Valuation'];?></a>
-<br>
 <a>Capacity: <?php echo $row['Capacity'];?></a>
 <br>
 <a href='../map.php'>Click here to return to the map.</a>
 </body>
 <script>
-if (<?php echo $row['Tier'];?> ===3){
-    
+document.getElementById("area").style.display = "none";
+document.getElementById("valuation").style.display = "none";
+if (<?php echo $_SESSION['Tier'];?>===3){
+    document.getElementById("area").style.display = "block";
+    document.getElementById("valuation").style.display = "block";
+}else if (<?php echo $_SESSION['Tier'];?>===2){
+    document.getElementById("area").style.display = "block";
 }
 </script>
 </html>
