@@ -36,7 +36,6 @@ $row= $stmt->fetch(PDO::FETCH_ASSOC);
 <br>
 <a id='area'>Area: <?php echo $row['Area'];?> acres</a>
 <a id='valuation'>Valuation: £<?php echo $row['Valuation'];?></a>
-<br>
 <a>Capacity: <?php echo $row['Capacity'];?></a>
 <br>
 <a href='../map.php'>Click here to return to the map.</a>

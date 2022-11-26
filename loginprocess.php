@@ -15,7 +15,8 @@ if($_POST['username']==''){
 }elseif($row['Username']!=$_POST['username']){
     header('Location: login.php');
 }else{
-    if($row['Password']== $_POST['passwd']){
+    $hashedPassword = hash('sha256', $_POST['passwd']);
+    if($row['Password']== $hashedPassword){
         $_SESSION['name']=$row['Username'];
 
         if($row['AccountType']=='user'){
