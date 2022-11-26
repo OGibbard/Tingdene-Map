@@ -20,10 +20,10 @@ session_destroy();
         <form class='form1' action='loginprocess.php' method='POST'>
             <input class='un' type='text' name='username' placeholder='Username'><br>
             <input class='pass' type='password' name='passwd' placeholder='Password'><br>
-            <input type="submit" value="Login"> 
+            <input class='submit' type="submit" value="Login"> 
         </form>
         <br>
-        <a href="signup.php">Click here to sign up.</a>
+        <p align='center'><a href="signup.php">Click here to sign up.</a></p>
         </div>
     </body>
 </html>
