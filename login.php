@@ -6,20 +6,24 @@ session_destroy();
 
 <html>
     <head>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
         <Title>
             Login
         </Title>    
     </head>
     <body>
-        <h1>
-            Please login.
-        </h1>
-        <form action='loginprocess.php' method='POST'>
-            User name:<input type='text' name='username'><br>
-            Password:<input type='password' name='passwd'><br>
+        <div class='main'>
+        <p class='sign' align='center'>Login:</p>
+        <form class='form1' action='loginprocess.php' method='POST'>
+            <input class='un' type='text' name='username' placeholder='Username'><br>
+            <input class='pass' type='password' name='passwd' placeholder='Password'><br>
             <input type="submit" value="Login"> 
         </form>
         <br>
         <a href="signup.php">Click here to sign up.</a>
+        </div>
     </body>
 </html>
