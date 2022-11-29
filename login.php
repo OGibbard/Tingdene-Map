@@ -24,6 +24,8 @@ session_destroy();
         </form>
         <br>
         <p align='center'><a href="signup.php">Click here to sign up.</a></p>
+        <br>
+        <br>
         </div>
     </body>
 </html>

@@ -7,7 +7,6 @@ function initMap() {
       streetViewControl: false,
     });
     
-    console.log(properties);
 
     for (let j=0; j < properties.length; j++) {
       var temptype = properties[j].SiteType
