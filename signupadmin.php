@@ -12,7 +12,7 @@
     </head>
     <body>
         <div class='main' height: '700px'>
-        <p class='sign' align='center'>Sign Up:</p>
+        <p class='sign' align='center'>Sign Up as Admin:</p>
         <form class='form1' action='signupprocess.php' method='POST'>
             <input class='un' placeholder='Username' type='text' name='username'><br>
             <input class='un' placeholder='Company' type='text' name='company'><br>

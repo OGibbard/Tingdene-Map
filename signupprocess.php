@@ -12,7 +12,7 @@ else {
     $hashedPassword = hash('sha256', $_POST['passwd']);
     try{
         if ($_POST['accounttype']=='admin'){
-            $stmt = $conn->prepare("INSERT INTO Accounts (Username,Password,AccountType,Company,Tier)VALUES (:username,:password,:accounttype,:company,1)");
+            $stmt = $conn->prepare("INSERT INTO Accounts (Username,Password,AccountType,Company,Tier)VALUES (:username,:password,:accounttype,:company,3)");
         
             $stmt->bindParam(':username', $_POST["username"]);
             $stmt->bindParam(':password', $hashedPassword); 
@@ -21,7 +21,7 @@ else {
             $stmt->execute();
         }
         else{
-            $stmt = $conn->prepare("INSERT INTO Accounts (Username,Password,AccountType)VALUES (:username,:password,:accounttype)");
+            $stmt = $conn->prepare("INSERT INTO Accounts (Username,Password,AccountType,Tier)VALUES (:username,:password,:accounttype,1)");
         
             $stmt->bindParam(':username', $_POST["username"]);
             $stmt->bindParam(':password', $hashedPassword);
