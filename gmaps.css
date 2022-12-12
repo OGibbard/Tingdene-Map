@@ -5,10 +5,12 @@
  */
 /* Set the size of the div element that contains the map */
 #map {
-    height: 850px;
+  height: 85%;
     /* The height is 800 pixels */
-    width: 100%;
+    width: 98%;
     /* The width is the width of the web page */
+    border-radius: 16px;
+    margin-left: 1%;
 }
 
 html,

@@ -27,7 +27,7 @@ if (isset($_SESSION['name'])==false){
     <script type="module" src="./index.js"></script>
   </head>
   <body>
-    <a href="homepage.php" class="arrow previous">&#8249;</a>
+    <a href="homepage.php" class="arrow">&#8249;</a>
     <p align='center'><?php echo $_SESSION['name']?> - <?php echo $_SESSION['company']?></p><br>
 
     <!--The div element for the map -->
