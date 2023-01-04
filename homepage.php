@@ -13,7 +13,7 @@ if ($_SESSION['accounttype']=='admin'){
         <link rel="stylesheet" href="menu.css">
         <Title>
             Homepage
-        </Title>    
+        </Title>
     </head>
     <body>
     <nav class="navMenu">

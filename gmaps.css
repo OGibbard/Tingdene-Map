@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 /**
  * @license
  * Copyright 2019 Google LLC. All Rights Reserved.
@@ -16,6 +17,32 @@
 html,
 body{
   height: 100%;
+  background: #272727;
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: 500;
   margin: 0;
   padding: 0;
 }
+
+p {
+  text-transform: uppercase;
+  color: #fddb3a;
+  }
+  
+.arrow {
+    text-decoration: none;
+    position: fixed;
+    left: 20px;
+    top: 15px;
+    padding: 8px 18px;
+    color: black;
+    background-color: #fddb3a;
+    border-radius: 5px;
+  }
+  
+  .arrow:hover {
+    background-color: #a59025;
+    color: black;
+  }

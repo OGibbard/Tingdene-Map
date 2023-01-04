@@ -8,9 +8,9 @@ if (isset($_SESSION['name'])==false){
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Map</title>
+    <title><?php echo ($_SESSION['company']); ?> map</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <link rel='stylesheet' type='text/css' href='backarrow.css'>
+    <link rel="stylesheet" type="text/css" href="./gmaps.css" />
     <?php
     include_once("connection.php");
     array_map("htmlspecialchars", $_POST);
