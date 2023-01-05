@@ -12,7 +12,7 @@ $stmt->bindParam(':username', $_POST['username']);
 $stmt->execute();
 while ($row= $stmt->fetch(PDO::FETCH_ASSOC))
 {
-    $hashedPassword= hash('sha256', $_POST['passwd'])
+    $hashedPassword = hash('sha256', $_POST['passwd']);
     if($row['Password']== $hashedPassword){
         if($row['AccountType']=='user'){
         try{

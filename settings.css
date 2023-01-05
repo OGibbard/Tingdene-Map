@@ -36,3 +36,18 @@ body {
 	border-radius: 100%;
 	border: 5px solid #fff;
 }
+.arrow {
+    text-decoration: none;
+    position: fixed;
+    left: 20px;
+    top: 15px;
+    padding: 8px 18px;
+    color: white;
+    background-color: #087cfc;
+    border-radius: 5px;
+  }
+  
+  .arrow:hover {
+    background-color: #1468c2;
+    color: white;
+  }
