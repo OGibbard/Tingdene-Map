@@ -7,11 +7,11 @@ if (isset($_SESSION['name'])==false){
 if ($_SESSION['accounttype']=='customer'){
     header('Location: ../homepage.php');
 };
-if ($_SESSION['company']!='Tingdene'){
+if ($_SESSION['company']!='Tingdene Group'){
     header('Location: ../homepage.php');
 };
 
-$stmt = $conn->prepare("SELECT * FROM properties WHERE WebsiteLink = 'Badgerwood' ;");
+$stmt = $conn->prepare("SELECT * FROM properties WHERE WebsiteLink = 'Thames-and-Kennet' ;");
 $stmt->execute();
 $row= $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
@@ -41,13 +41,13 @@ $row= $stmt->fetch(PDO::FETCH_ASSOC);
 <a href='../map.php'>Click here to return to the map.</a>
 </body>
 <script>
-document.getElementById('area').style.display = 'none';
-document.getElementById('valuation').style.display = 'none';
+document.getElementById("area").style.display = "none";
+document.getElementById("valuation").style.display = "none";
 if (<?php echo $_SESSION['Tier'];?>===3){
-document.getElementById('area').style.display = 'block';
-document.getElementById('valuation').style.display = 'block';
+    document.getElementById("area").style.display = "block";
+    document.getElementById("valuation").style.display = "block";
 }else if (<?php echo $_SESSION['Tier'];?>===2){
-document.getElementById('area').style.display = 'block';
+    document.getElementById("area").style.display = "block";
 }
 </script>
 </html>

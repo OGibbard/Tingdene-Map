@@ -7,11 +7,11 @@ if (isset($_SESSION['name'])==false){
 if ($_SESSION['accounttype']=='customer'){
     header('Location: ../homepage.php');
 };
-if ($_SESSION['company']!='Tingdene'){
+if ($_SESSION['company']!='Tingdene Group'){
     header('Location: ../homepage.php');
 };
 
-$stmt = $conn->prepare("SELECT * FROM properties WHERE WebsiteLink = 'Osborne' ;");
+$stmt = $conn->prepare("SELECT * FROM properties WHERE WebsiteLink = 'Badgerwood' ;");
 $stmt->execute();
 $row= $stmt->fetch(PDO::FETCH_ASSOC);
 ?>

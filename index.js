@@ -11,7 +11,7 @@ function initMap() {
     for (let j=0; j < properties.length; j++) {
       var temptype = properties[j].SiteType
       const infowindow = new google.maps.InfoWindow({
-        content: ('<a href="'+properties[j].Company+'/'+properties[j].WebsiteLink+'.php">'+properties[j].SiteName+'</a><br><a>'+properties[j].SiteType+'</a>'),
+        content: ('<a href="'+properties[j].Company+'/'+properties[j].WebsiteLink+'.php">'+properties[j].SiteName+'</a><br><a href="'+properties[j].Company+'/'+properties[j].WebsiteLink+'.php">'+properties[j].SiteType+'</a>'),
       });
       const marker = new google.maps.Marker({
         position: {lat: parseFloat(properties[j].Latitude), lng: parseFloat(properties[j].Longitude)},
