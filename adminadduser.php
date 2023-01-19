@@ -39,5 +39,5 @@ while ($row= $stmt->fetch(PDO::FETCH_ASSOC))
 echo $stmt->fetch(PDO::FETCH_ASSOC);
 
 $conn=null;
-
+header('Location: admin.php')
 ?>
