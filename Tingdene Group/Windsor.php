@@ -1,6 +1,6 @@
 <?php
-include_once ('..\connection.php')
-;session_start();
+include_once ('..\connection.php');
+session_start();
 if (isset($_SESSION['name'])==false){
   header('Location: ../login.php');
 };
@@ -11,7 +11,7 @@ if ($_SESSION['company']!='Tingdene Group'){
     header('Location: ../homepage.php');
 };
 
-$stmt = $conn->prepare("SELECT * FROM properties WHERE WebsiteLink = 'Windsor' ;");
+$stmt = $conn->prepare("SELECT * FROM properties WHERE WebsiteLink = 'Windsor' AND Company = $_SESSION['company'];");
 $stmt->execute();
 $row= $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
