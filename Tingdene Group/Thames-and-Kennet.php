@@ -11,7 +11,8 @@ if ($_SESSION['company']!='Tingdene Group'){
     header('Location: ../homepage.php');
 };
 
-$stmt = $conn->prepare("SELECT * FROM properties WHERE WebsiteLink = 'Thames-and-Kennet' AND Company = $_SESSION['company'];");
+$stmt = $conn->prepare("SELECT * FROM properties WHERE WebsiteLink = 'Thames-and-Kennet' AND Company = :company;");
+$stmt->bindParam(':company',$_SESSION['company']);
 $stmt->execute();
 $row= $stmt->fetch(PDO::FETCH_ASSOC);
 ?>

@@ -1,13 +1,16 @@
 <?php
+#Start session
 session_start();
+
+#Check if logged in
 if (isset($_SESSION['name']) == false) {
 	header('Location: login.php');
-}
-;
+};
+
+#Check if account is an admin
 if ($_SESSION['accounttype'] != 'admin') {
 	header('Location: homepage.php');
-}
-;
+};
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +19,7 @@ if ($_SESSION['accounttype'] != 'admin') {
 	<meta charset="UTF-8">
 	<title>Admin</title>
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<!-- Import the bootstrap and style sheets -->
 	<link rel="stylesheet" type="text/css"
 		href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -37,6 +41,7 @@ if ($_SESSION['accounttype'] != 'admin') {
 							<?php echo ($_SESSION['company']); ?>
 						</h4>
 					</div>
+					<!-- Menu on left side -->
 					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 						<a class="nav-link active" id="account-tab" data-toggle="pill" href="#account" role="tab"
 							aria-controls="account" aria-selected="true">
@@ -65,11 +70,13 @@ if ($_SESSION['accounttype'] != 'admin') {
 						</a>
 					</div>
 				</div>
+				<!-- Users section -->
 				<div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
 					<div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
 						<h3 class="mb-4">Users</h3>
 						<div class="row">
 							<div class="col-md-6">
+								<!-- Add user form -->
 								<h5>Add User</h5>
 								<form action='adminadduser.php' method='POST'>
 									Username:<input type='text' name='username' class='form-control'><br>
@@ -77,6 +84,7 @@ if ($_SESSION['accounttype'] != 'admin') {
 									<input type="submit" value="Add user" class='btn btn-primary'>
 								</form>
 								<br><br>
+								<!-- Change tier form -->
 								<h5>Change Tier</h5>
 								<form action='adminchangetier.php' method="POST">
 									Username:<select name="Username" class='form-control'><br>
@@ -98,6 +106,7 @@ if ($_SESSION['accounttype'] != 'admin') {
 									<input type="submit" value="Change Tier" class='btn btn-primary'>
 								</form>
 								<br><br>
+								<!-- Remove user form -->
 								<h5>Remove User</h5>
 								<form action='admindeleteuser.php' method="POST">
 									Username:<select name="Username" class='form-control'><br>
@@ -117,10 +126,12 @@ if ($_SESSION['accounttype'] != 'admin') {
 							</div>
 						</div>
 					</div>
+					<!-- Admins section -->
 					<div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
 						<h3 class="mb-4">Admins</h3>
 						<div class="row">
 							<div class="col-md-6">
+								<!-- Add admin form -->
 								<h5>Add Admin</h5>
 								<form action='adminaddadmin.php' method="POST">
 									Username:<select name="Username" class='form-control'>
@@ -138,6 +149,7 @@ if ($_SESSION['accounttype'] != 'admin') {
 									<input type="submit" value="Add Admin" class='btn btn-primary'>
 								</form>
 								<br><br>
+								<!-- Remove admin form -->
 								<h5>Remove Admin</h5>
 								<form action='admindeleteadmin.php' method="POST">
 									Username:<select name="Username" class='form-control'>
@@ -153,6 +165,7 @@ if ($_SESSION['accounttype'] != 'admin') {
 									</select>
 									<br>
 									Click to Confirm: <input type='radio' onclick='showButton()'>
+									<!-- Show button when confirmation is clicked -->
 									<input id='adminremovebutton' type="submit" value="Remove Admin"
 										class='btn btn-primary'>
 									<script type="text/javascript">
@@ -165,10 +178,12 @@ if ($_SESSION['accounttype'] != 'admin') {
 							</div>
 						</div>
 					</div>
+					<!-- Add site section -->
 					<div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
 						<h3 class="mb-4">Add Site</h3>
 						<div class="row">
 							<div class="col-md-6">
+								<!-- Add site form -->
 								<form action='adminaddsite.php' method='POST'>
 									Site name:<input type='text' name='sitename' class='form-control'><br>
 									Site type:<input type='text' name='sitetype' class='form-control'><br>
@@ -182,10 +197,12 @@ if ($_SESSION['accounttype'] != 'admin') {
 							</div>
 						</div>
 					</div>
+					<!-- Remove site section -->
 					<div class="tab-pane fade" id="application" role="tabpanel" aria-labelledby="application-tab">
 						<h3 class="mb-4">Remove Site</h3>
 						<div class="row">
 							<div class="col-md-6">
+								<!-- Delete site form -->
 								<form action='admindeletesite.php' method="POST">
 									Site:<select name="SiteName" class='form-control'><br>
 										<?php
@@ -204,10 +221,12 @@ if ($_SESSION['accounttype'] != 'admin') {
 							</div>
 						</div>
 					</div>
+					<!-- Upload marker section -->
 					<div class="tab-pane fade" id="notification" role="tabpanel" aria-labelledby="notification-tab">
 						<h3 class="mb-4">Upload Marker</h3>
 						<div class="row">
 							<div class="col-md-6">
+								<!-- Upload marker form -->
 								<form action="uploadmarker.php" method="post" enctype="multipart/form-data">
 									<h5>PNG Upload</h5>
 									<br>
@@ -224,7 +243,7 @@ if ($_SESSION['accounttype'] != 'admin') {
 		</div>
 	</section>
 
-
+	<!-- Format website -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
