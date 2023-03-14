@@ -1,3 +1,4 @@
+/* Font */
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
 body {
 	background: #f9f9f9;
@@ -30,12 +31,14 @@ body {
 	width: 20px;
 }
 
+/* Circle picture */
 .img-circle img {
 	height: 100px;
 	width: 100px;
 	border-radius: 100%;
 	border: 5px solid #fff;
 }
+/* Arrow */
 .arrow {
     text-decoration: none;
     position: fixed;
@@ -47,6 +50,7 @@ body {
     border-radius: 5px;
   }
   
+  /* Hover */
   .arrow:hover {
     background-color: #1468c2;
     color: white;

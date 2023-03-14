@@ -1,6 +1,9 @@
 <?php
+#Start session
 session_start();
+#Find directory
 $target_dir = $_SESSION['company']."/";
+#Where to upload to
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 print_r($target_file);
 $uploadOk = 1;
@@ -17,19 +20,23 @@ if(isset($_POST["submit"])) {
   }
 }
 
+#Check if it already exists
 if (file_exists($target_file)) {
   echo "Sorry, file already exists.";
   $uploadOk = 0;
 }
+#Check if it is too large
 if ($_FILES["fileToUpload"]["size"] > 500000) {
   echo "Sorry, your file is too large.";
   $uploadOk = 0;
 }
+#Check the file type
 if($imageFileType != "png" ) {
   echo "Sorry PNG files are allowed.";
   $uploadOk = 0;
 }
 
+#File not uploaded
 if ($uploadOk == 0) {
   echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file

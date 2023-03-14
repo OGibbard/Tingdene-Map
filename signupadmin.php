@@ -2,6 +2,7 @@
 
 <html>
     <head>
+        <!-- Import stylesheet -->
         <link rel="stylesheet" href="style.css">
         <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,8 +12,10 @@
         </Title>    
     </head>
     <body>
+        <!-- Main form -->
         <div class='main' height: '700px'>
         <p class='sign' align='center'>Sign Up as Admin:</p>
+        <!-- Form -->
         <form class='form1' action='signupprocess.php' method='POST'>
             <input class='un' placeholder='Username' type='text' name='username'><br>
             <input class='un' placeholder='Company' type='text' name='company'><br>
@@ -21,6 +24,7 @@
             <input class='submit' type="submit" value="Sign up">
         </form>
         <br>
+        <!-- Other links for normal sign up and login -->
         <p align='center'><a href="signup.php">Click here to sign up as an user.</a></p>
         <p align='center'><a href="login.php">Click here to login.</a></p>
         <br>

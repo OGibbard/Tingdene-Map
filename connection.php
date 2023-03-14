@@ -1,4 +1,5 @@
 <?php
+#Variables of local network
 $servername = "localhost";
 $user = "root";
 $password = "";

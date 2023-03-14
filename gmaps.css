@@ -7,13 +7,13 @@
 /* Set the size of the div element that contains the map */
 #map {
   height: 85%;
-    /* The height is 800 pixels */
     width: 98%;
     /* The width is the width of the web page */
     border-radius: 16px;
     margin-left: 1%;
 }
 
+/* Main body around map */
 html,
 body{
   height: 100%;
@@ -26,11 +26,13 @@ body{
   padding: 0;
 }
 
+/* Title of map */
 p {
   text-transform: uppercase;
   color: #fddb3a;
   }
-  
+
+/* Arrow to return to homepage */
 .arrow {
     text-decoration: none;
     position: fixed;
@@ -42,6 +44,7 @@ p {
     border-radius: 5px;
   }
   
+/* Hovering over arrow makes it darker */
   .arrow:hover {
     background-color: #a59025;
     color: black;
